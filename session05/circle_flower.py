@@ -7,20 +7,20 @@ def polygon(t, n, length):
         t.lt(360/n)
 
 def circle(t, r):
-"""I started off by creating a normal circle"""
+# """I started off by creating a normal circle"""
     circumference = 2 * math.pi * r
     n = int(circumference / 3) + 1
     length = circumference / n
     polygon(t, n, length)
 
 def petal(t, r, angle):
-"Next I created the petals by creating more circles, but moving the pen at a left 180 degree angle at the radius to kind of distort the shape"
+# """Next I created the petals by creating more circles, but moving the pen at a left 180 degree angle at the radius to kind of distort the shape"""
     for i in range(2):
         t.circle(r, angle)
         t.lt(180-angle)
 
 def flower(t, n, r, angle):
-""" Lastly, I had to move the flower up because it was not in the center of the circle"""
+# """Lastly, I had to move the flower up because it was not in the center of the circle"""
     for i in range(n):
         t.penup()
         t.goto(0, 100)
