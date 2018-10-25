@@ -50,13 +50,29 @@ import string
 #     return len(hist)
 
 
-def most_common(hist):
+def most_common(hist, excluding_stopwords = True):
     """Makes a list of word-freq pairs in descending order of frequency.
     hist: map from word to frequency
     returns: list of (frequency, word) pairs
     """
     wordfreq = [hist.count(p) for p in hist]
     return dict(zip(hist,wordfreq))
+
+    t = []
+    stopwords = process_file('session13/stopwords.txt', False)
+    
+    print(stopwords)
+
+    for key, value in hist.items():
+        if value :
+            t.append((value, key))
+        else:
+            return t
+    
+
+
+    t.sort(reverse= True)
+    return t
 
 
 def print_most_common(hist, num=10):
