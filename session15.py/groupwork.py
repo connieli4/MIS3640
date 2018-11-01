@@ -8,7 +8,7 @@ class People:
         self.birthdate = birthdate
 
     def age(self):
-        today = datetime.date.today()
+        today = datetime.today()
         age = today.year - self.birthdate.year
 
         if today < datetime.date(today.year, self.birthdate.month, self.birthdate.day):
@@ -17,9 +17,14 @@ class People:
         return age
     
     def __str__(self):
-        return '{}{},{}'.format(self.firstname, self.lastname, self.age)
+        return '{} {},{}'.format(self.firstname, self.lastname, self.age)
 
 
-person = People('John', 'Smith', 2000)
+def main():
+    person = People('John', 'Smith', datetime(2000, 12, 22))
+    print(person)
 
-print(person)
+
+if __name__ == '__main__':
+    main()
+
