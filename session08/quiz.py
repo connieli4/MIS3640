@@ -16,10 +16,10 @@ def is_special(n):
 # following lines and run this file to test!
 
 
-# print(is_special(2020))
-# print(is_special(300))
-# print(is_special(2018))
-# print(is_special(2000))
+print(is_special(2020))
+print(is_special(300))
+print(is_special(2018))
+print(is_special(2000))
 
 """
 -----------------------------------------------------------------------
@@ -68,5 +68,5 @@ def sum_cubes_of_odd_numbers(n):
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-print(sum_cubes_of_odd_numbers(1))
-print(sum_cubes_of_odd_numbers(10))
+# print(sum_cubes_of_odd_numbers(1))
+# print(sum_cubes_of_odd_numbers(10))
