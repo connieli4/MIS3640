@@ -43,7 +43,7 @@ def main():
     p4 = Person('Donald Trump')
     p5 = Person('Michelle Obama')
 
-    person_list = [p1, p2, p3, p4, p5]
+    personList = [p1, p2, p3, p4, p5]
 
     for e in personList:
         print(e)

@@ -5,7 +5,32 @@ class Point:
 
     attributes: x, y
     """
+    def __init__(self, a=0, b=0):
+        self.x = a
+        self.y = b
+    
+    def print_point(self):
+        print('({}, {}).'.format(self.x, self.y))
+    
+    def __str__(self):
+        return '({},{})'.format(self.x, self.y)
+    
+    def __add__(self, other):
+        new_point = Point(self.x + other.x, self.y + other.y)
+        return new_point
+    
+    def __sub__(self, other):
+        new_point = Point(self.x - other.x, self.y - other.y)
+        return new_point
+    
+    def __eq__(self, other):
+        return self.x == other.x
 
+defne = Point(4, 3)
+defne.print_point()
+shirley = Point(1, 1)
+print(defne + shirley)
+print(defne - shirley)
 
 def print_point(p):
     """Print a Point object in human-readable format."""
@@ -68,44 +93,45 @@ def print_rectangle(rect):
     print_point(rect.corner)
 
 
-def main():
-    my_point = Point()
-    print(Point.__doc__)
-    my_point.x = 3
-    my_point.y = 4
-    print('My point', end=' ')
-    print_point(my_point)
+# def main():
 
-    print('Is my_point an instance of Point?', isinstance(my_point, Point))
-    print('Is my_point an instance of Rectangle?',
-          isinstance(my_point, Rectangle))
-    print('Does my_point have an attribute x?', hasattr(my_point, 'x'))
-    print('Does my_point have an attribute z?', hasattr(my_point, 'z'))
+#     my_point = Point()
+#     print(Point.__doc__)
+#     my_point.x = 3
+#     my_point.y = 4
+#     print('My point', end=' ')
+#     print_point(my_point)
 
-    box = Rectangle()
-    box.width = 100.0
-    box.height = 200.0
-    box.corner = Point()
-    box.corner.x = 0.0
-    box.corner.y = 0.0
+#     print('Is my_point an instance of Point?', isinstance(my_point, Point))
+#     print('Is my_point an instance of Rectangle?',
+#           isinstance(my_point, Rectangle))
+#     print('Does my_point have an attribute x?', hasattr(my_point, 'x'))
+#     print('Does my_point have an attribute z?', hasattr(my_point, 'z'))
 
-    print('Does box have an attribute x?', hasattr(box, 'x'))
+#     box = Rectangle()
+#     box.width = 100.0
+#     box.height = 200.0
+#     box.corner = Point()
+#     box.corner.x = 0.0
+#     box.corner.y = 0.0
 
-    print('Does box have an attribute corner?', hasattr(box, 'corner'))
+#     print('Does box have an attribute x?', hasattr(box, 'x'))
 
-    print('Rectangle has these:', dir(box))
+#     print('Does box have an attribute corner?', hasattr(box, 'corner'))
 
-    center = find_center(box)
-    print('center', end=' ')
-    print_point(center)
+#     print('Rectangle has these:', dir(box))
 
-    print(box.width)
-    print(box.height)
-    print('grow')
-    grow_rectangle(box, 50, 100)
-    print(box.width)
-    print(box.height)
+#     center = find_center(box)
+#     print('center', end=' ')
+#     print_point(center)
+
+#     print(box.width)
+#     print(box.height)
+#     print('grow')
+#     grow_rectangle(box, 50, 100)
+#     print(box.width)
+#     print(box.height)
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
